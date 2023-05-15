@@ -1,0 +1,132 @@
+---
+title: "Building your own hypothesis of global reef biodiversity using Reef Life Survey data"
+subtitle: "KSM201 - Marine resource management and convervation"
+author: "Graham Edgar & Freddie Heather"
+date: "2023-05-19"
+title-block-banner: true
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+# Introduction
+
+The Reef Life Survey (<http://reeflifesurvey.com/>) dataset is now the most comprehensive source available that describes the distribution and abundance of fishes and invertebrates in the coastal zone worldwide [@stuart-smith2013; @edgar2014; @edgar2014a]. It has been compiled with the assistance of skilled and enthusiastic citizen scientists trained to a scientific level in underwater census of marine species along 50-m long transects, and is coordinated by staff at the University of Tasmania. These data are updated regularly and available online through the AODN portal (<https://portal.aodn.org.au/search>).
+
+Abundance data obtained using systematic field methods are now available for 4560 species in 4 phyla observed along \>12,000 transects in 44 nations and 82 marine ecoregions [@spalding2007]. These data allow separation of geographic patterns for:
+
+1.  11 animal classes (bony fishes, elasmobranchs, reptiles, mammals, crinoids, sea stars, urchins, holothurians, crustaceans, cephalopods, gastropods),
+
+2.  $\alpha-$, $\beta-$, and $\gamma-$ diversity, and
+
+3.  Site versus regional and larger scales, while also allowing consideration of variation in animal abundance. A unique feature of this dataset is that it covers all mobile macroscopic (\>2.5 cm) species observed at sites, from crustaceans to fishes to mammals, consequently interactions between different higher taxa can also be considered.
+
+Associated with the RLS dataset are environmental covariate data for all the sites investigated (@tbl-site-covars), plus trait data for all the species observed (@tbl-species-covars). By crossing the various datasets we can investigate how coastal biodiversity is distributed globally, how patterns vary at different spatial scales, and how those patterns are affected by environmental, human and life-history covariates. The aim of this practical is to assess an interesting hypothesis related the distribution of life on earth (or a region within), analysing the RLS datasets to see if the information supports predictions associated with that hypothesis or not.\
+
+| **Variable**                           | **Units**                                                                                                                                                                                            |
+|-----------------------------------------------|------------------------|
+| SiteCode                               |                                                                                                                                                                                                      |
+| Site name                              |                                                                                                                                                                                                      |
+| Site latitude                          | decimal degrees                                                                                                                                                                                      |
+| Site longitude                         | decimal degrees                                                                                                                                                                                      |
+| Country                                |                                                                                                                                                                                                      |
+| Population in 2005                     |                                                                                                                                                                                                      |
+| Ecoregion                              |                                                                                                                                                                                                      |
+| Province                               |                                                                                                                                                                                                      |
+| Realm                                  |                                                                                                                                                                                                      |
+| Tropical/temperate                     |                                                                                                                                                                                                      |
+| mean nitrate                           | $\micro mol/l$                                                                                                                                                                                       |
+| mean Diffuse Attenuation               | $m^{-1}$                                                                                                                                                                                             |
+| mean  chlorophyll A                    | $mg/m^3$                                                                                                                                                                                             |
+| mean dissolved oxygen                  | $ml/l$                                                                                                                                                                                               |
+| mean salinity                          | $PSS$                                                                                                                                                                                                |
+| calcite concentration                  | $mol/m^3$                                                                                                                                                                                            |
+| maximum sea surface temperature        | $\degree C$                                                                                                                                                                                          |
+| minimum sea surface temperature        | $\degree C$                                                                                                                                                                                          |
+| mean phosphate                         | $\micro mol/l$                                                                                                                                                                                       |
+| mean silicate                          | $\micro mol/l$                                                                                                                                                                                       |
+| Photosynthetically available radiation | $Einstein/m^3/day$                                                                                                                                                                                   |
+| range of sea surface temperature       | $\degree C$                                                                                                                                                                                          |
+| mean sea surface temperature           | $\degree C$                                                                                                                                                                                          |
+| POP_index                              | index                                                                                                                                                                                                |
+| MPA name                               |                                                                                                                                                                                                      |
+| MPA regulations                        | no-take area in multizoned MPA, no-take area that fills MPA, area open to fishing in multizoned MPA, restricted fishing area (some gear restrictions) in multizoned MPA, open to fishing outside MPA |
+| Number of species                      | $500 m^2$ transect area                                                                                                                                                                              |
+| Biomass of fishes                      | $250 m^2$ transect area                                                                                                                                                                              |
+| Biomass of large (\>25 cm) fishes      | $250 m^2$ transect area                                                                                                                                                                              |
+| Number of individual fishes            | $250 m^2$ transect area                                                                                                                                                                              |
+| Number of species                      | $250 m^2$ transect area                                                                                                                                                                              |
+
+: Site-level covariate data available for the analysis. For more information about the covariates see the "site metadata" sheet of the "Environmental covariate data RLS.xlsx" file. {#tbl-site-covars}
+
+| Species variable | Variable                       |
+|------------------|--------------------------------|
+| PHYLUM           | PHYLUM                         |
+| CLASS            | CLASS                          |
+| ORDER            | ORDER                          |
+| FAMILY           | FAMILY                         |
+| Introduced       | Introduced species or not      |
+| Min depth        | Min depth                      |
+| Max depth        | Max depth                      |
+| IUCN category    | IUCN category                  |
+| Diet             | Diet                           |
+| Trophic group    | Trophic group                  |
+| Time             | Nocturnal/diurnal behaviour    |
+| Water column     | vertical position above seabed |
+| Habitat          | benthic habitat association    |
+
+: Species-level covariate data available for the analysis. For more information about the covariates see the "species metadata" sheet of the "Environmental covariate data RLS.xlsx" file. {#tbl-species-covars}
+
+## Today practical
+
+We will follow three steps:
+
+1.  Hypothesis formation
+2.  Data gathering/downloading
+3.  Data analysis and formation
+
+# Hypothesis formation
+
+Firstly, decide on an interesting hypothesis, ideally one that involves a combination of two environmental/trait factors, such as:
+
+1.  Different trophic groups of fishes (carnivores, herbivores, planktivores) are affected by human activities in different ways, and these patterns vary between tropics and temperate zones.
+2.  Species richness declines away from the tropics, with consistent patterns evident regardless of taxonomic group and ocean.
+3.  Fish biomass increases with the level of primary production, but human activity interferes with these patterns.
+
+The next step is to derive predictions from those hypotheses that can be tested using the data:
+
+1.  A significant relationship is evident in graphs when human population density is plotted against total abundance of fishes, but the shape of relationships differs for the three major trophic groups (carnivores, herbivores, planktivores).
+2.  Plots of species richness versus latitude do not differ for fishes, gastropods and crustaceans, nor for total species richness in different oceans.
+3.  Plots of total fish biomass per transect increases with photosynthetically-active radiation, nitrate and phosphate concentrations, but plots differ when binned at different human population density.
+
+Either on a piece of paper or your digial drawing app of choice (e.g. paint/powerpoint), roughly draw these figures out, what would you expect the figures to look like if the hypothesis was correct or incorrect?
+
+# Getting the data
+
+1.  Raw data: abundance of each species of animal recorded on each transect, with date, depth, and location of transect ([Global data 50m2.xlsx](https://docs.google.com/spreadsheets/d/1VESNnRXY6NBPqKBM5wO6pSMAy3uiZsL4YlQxaK9opCk/edit?usp=sharing){.uri})
+2.  Species dataset, showing taxonomic hierarchy, maximum recorded length, trophic category for each species (Sheet "Site" from [Environmental covariate data RLS.xlsx](https://docs.google.com/spreadsheets/d/1Bd-_BGjKOFoDDgmIKuWerHdqek3DxYgejYsMh8hnuss/edit?usp=sharing){.uri})
+3.  Site dataset, showing regional hierarchy, latitude, longitude, environmental conditions (including nitrates, phosphates, PAR, chlorophyll levels, human population density) for each site (Sheet "species" from [Environmental covariate data RLS.xlsx](https://docs.google.com/spreadsheets/d/1Bd-_BGjKOFoDDgmIKuWerHdqek3DxYgejYsMh8hnuss/edit?usp=sharing){.uri})
+
+# Data analysis and interpretation
+
+You can perform this either in excel or in R (go on!).
+
+## Excel
+
+-   **Data wrangling**: `filter`, `pivot table`, `=vlookup()`, `=if()`
+
+-   **Data visualisation:** `Insert > Plot`
+
+## R
+
+If you have some experience in R, then you're more than welcome (encouraged even), to give your data visualisation and analysis a go in R/R-Studio.
+
+-   **Data import:** `read_csv()`
+
+-   **Data wrangling:** `filter()`, `mutate()`, `select()`, `left_join()`
+
+-   **Data visualisation:** `ggplot()`
+
+## Interpretation
+
+Do the findings agree or disagree with your hypothesis? How does the figure(s) compare to the predicted figure you drew before the analysis?
