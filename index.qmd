@@ -1,30 +1,36 @@
 ---
 title: "Building your own hypothesis of global reef biodiversity using Reef Life Survey data"
 subtitle: "KSM201 - Marine resource management and convervation"
-author: "Freddie Heather, Adam Yeap, Micah Landon-Lane, Ahmad Catur Widyatmoko, Rachel Breslin, Tyson Bessell, Jemina Stuart-Smith (coordinator)"
+author: "Graham Edgar & Freddie Heather"
 date: "2023-05-19"
+abstract: "Freddie Heather, Adam Yeap, Micah Landon-Lane, Ahmad Catur Widyatmoko, Rachel Breslin, Tyson Bessell, Jemina Stuart-Smith (coordinator)"
 title-block-banner: "#000080"
 toc: true
 format: html
 editor: visual
 bibliography: references.bib
-author-title: "Tutors"
+author-title: "Authors"
 published-title: "Practical date"
+abstract-title: "Tutors"
 ---
 
 # Introduction
 
 The Reef Life Survey (<http://reeflifesurvey.com/>) dataset is now the most comprehensive source available that describes the distribution and abundance of fishes and invertebrates in the coastal zone worldwide [@stuart-smith2013; @edgar2014; @edgar2014a]. It has been compiled with the assistance of skilled and enthusiastic citizen scientists trained to a scientific level in underwater census of marine species along 50-m long transects, and is coordinated by staff at the University of Tasmania. These data are updated regularly and available online through the AODN portal (<https://portal.aodn.org.au/search>).
 
-Abundance data obtained using systematic field methods are now available for 4560 species in 4 phyla observed along \>12,000 transects in 44 nations and 82 marine ecoregions [@spalding2007]. These data allow separation of geographic patterns for:
+Abundance data are obtained using systematic field methods (@fig-rls-methods) are now available for 4560 species in 4 phyla observed along \>12,000 transects in 44 nations and 82 marine ecoregions [@spalding2007]. These data allow separation of geographic patterns for:
 
 1.  11 animal classes (bony fishes, elasmobranchs, reptiles, mammals, crinoids, sea stars, urchins, holothurians, crustaceans, cephalopods, gastropods),
 
-2.  $\alpha-$, $\beta-$, and $\gamma-$ diversity, and
+2.  $\alpha-$, $\beta-$, and $\gamma-$ diversity, (e.g. see @fig-diversity) and
 
 3.  Site versus regional and larger scales, while also allowing consideration of variation in animal abundance. A unique feature of this dataset is that it covers all mobile macroscopic (\>2.5 cm) species observed at sites, from crustaceans to fishes to mammals, consequently interactions between different higher taxa can also be considered.
 
-Associated with the RLS dataset are environmental covariate data for all the sites investigated (@tbl-site-covars), plus trait data for all the species observed (@tbl-species-covars). By crossing the various datasets we can investigate how coastal biodiversity is distributed globally, how patterns vary at different spatial scales, and how those patterns are affected by environmental, human and life-history covariates. The aim of this practical is to assess an interesting hypothesis related the distribution of life on earth (or a region within), analysing the RLS datasets to see if the information supports predictions associated with that hypothesis or not.\
+![Reef Life Survey two main methods - Fish (Method 1) and large mobile invertebrate (Method 2) surveys.](methods.png){#fig-rls-methods fig-align="center"}
+
+Associated with the RLS dataset are environmental covariate data for all the sites investigated (@tbl-site-covars), plus trait data for all the species observed (@tbl-species-covars). By crossing the various datasets we can investigate how coastal biodiversity is distributed globally, how patterns vary at different spatial scales, and how those patterns are affected by environmental, human and life-history covariates. The aim of this practical is to assess an interesting hypothesis related the distribution of life on earth (or a region within), analysing the RLS datasets to see if the information supports predictions associated with that hypothesis or not.
+
+![$\alpha$, $\beta$, and $\gamma$ diversity. Image from bio.libretexts.org.](diversity.png){#fig-diversity fig-align="center"}
 
 | **Variable**                           | **Units**                                                                                                                                                                                            |
 |-----------------------------------------------|-------------------------|

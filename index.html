@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Freddie Heather, Adam Yeap, Micah Landon-Lane, Ahmad Catur Widyatmoko, Rachel Breslin, Tyson Bessell, Jemina Stuart-Smith (coordinator)">
+<meta name="author" content="Graham Edgar &amp; Freddie Heather">
 <meta name="dcterms.date" content="2023-05-19">
 
 <title>Building your own hypothesis of global reef biodiversity using Reef Life Survey data</title>
@@ -78,9 +78,9 @@ div.csl-indent {
   <div class="quarto-title-meta">
 
       <div>
-      <div class="quarto-title-meta-heading">Tutors</div>
+      <div class="quarto-title-meta-heading">Authors</div>
       <div class="quarto-title-meta-contents">
-               <p>Freddie Heather, Adam Yeap, Micah Landon-Lane, Ahmad Catur Widyatmoko, Rachel Breslin, Tyson Bessell, Jemina Stuart-Smith (coordinator) </p>
+               <p>Graham Edgar &amp; Freddie Heather </p>
             </div>
     </div>
       
@@ -94,6 +94,12 @@ div.csl-indent {
       
     </div>
     
+  <div>
+    <div class="abstract">
+      <div class="abstract-title">Tutors</div>
+      Freddie Heather, Adam Yeap, Micah Landon-Lane, Ahmad Catur Widyatmoko, Rachel Breslin, Tyson Bessell, Jemina Stuart-Smith (coordinator)
+    </div>
+  </div>
   
   </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -124,14 +130,25 @@ div.csl-indent {
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>The Reef Life Survey (<a href="http://reeflifesurvey.com/" class="uri">http://reeflifesurvey.com/</a>) dataset is now the most comprehensive source available that describes the distribution and abundance of fishes and invertebrates in the coastal zone worldwide <span class="citation" data-cites="stuart-smith2013 edgar2014 edgar2014a">(<a href="#ref-stuart-smith2013" role="doc-biblioref">Stuart-Smith et al. 2013</a>; <a href="#ref-edgar2014" role="doc-biblioref">Graham J. Edgar and Stuart-Smith 2014</a>; <a href="#ref-edgar2014a" role="doc-biblioref">Graham J. Edgar et al. 2014</a>)</span>. It has been compiled with the assistance of skilled and enthusiastic citizen scientists trained to a scientific level in underwater census of marine species along 50-m long transects, and is coordinated by staff at the University of Tasmania. These data are updated regularly and available online through the AODN portal (<a href="https://portal.aodn.org.au/search" class="uri">https://portal.aodn.org.au/search</a>).</p>
-<p>Abundance data obtained using systematic field methods are now available for 4560 species in 4 phyla observed along &gt;12,000 transects in 44 nations and 82 marine ecoregions <span class="citation" data-cites="spalding2007">(<a href="#ref-spalding2007" role="doc-biblioref">Spalding et al. 2007</a>)</span>. These data allow separation of geographic patterns for:</p>
+<p>Abundance data are obtained using systematic field methods (<a href="#fig-rls-methods">Figure&nbsp;1</a>) are now available for 4560 species in 4 phyla observed along &gt;12,000 transects in 44 nations and 82 marine ecoregions <span class="citation" data-cites="spalding2007">(<a href="#ref-spalding2007" role="doc-biblioref">Spalding et al. 2007</a>)</span>. These data allow separation of geographic patterns for:</p>
 <ol type="1">
 <li><p>11 animal classes (bony fishes, elasmobranchs, reptiles, mammals, crinoids, sea stars, urchins, holothurians, crustaceans, cephalopods, gastropods),</p></li>
-<li><p><span class="math inline">\(\alpha-\)</span>, <span class="math inline">\(\beta-\)</span>, and <span class="math inline">\(\gamma-\)</span> diversity, and</p></li>
+<li><p><span class="math inline">\(\alpha-\)</span>, <span class="math inline">\(\beta-\)</span>, and <span class="math inline">\(\gamma-\)</span> diversity, (e.g.&nbsp;see <a href="#fig-diversity">Figure&nbsp;2</a>) and</p></li>
 <li><p>Site versus regional and larger scales, while also allowing consideration of variation in animal abundance. A unique feature of this dataset is that it covers all mobile macroscopic (&gt;2.5 cm) species observed at sites, from crustaceans to fishes to mammals, consequently interactions between different higher taxa can also be considered.</p></li>
 </ol>
-<p>Associated with the RLS dataset are environmental covariate data for all the sites investigated (<a href="#tbl-site-covars">Table&nbsp;1</a>), plus trait data for all the species observed (<a href="#tbl-species-covars">Table&nbsp;2</a>). By crossing the various datasets we can investigate how coastal biodiversity is distributed globally, how patterns vary at different spatial scales, and how those patterns are affected by environmental, human and life-history covariates. The aim of this practical is to assess an interesting hypothesis related the distribution of life on earth (or a region within), analysing the RLS datasets to see if the information supports predictions associated with that hypothesis or not.<br>
-</p>
+<div id="fig-rls-methods" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="methods.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Reef Life Survey two main methods - Fish (Method 1) and large mobile invertebrate (Method 2) surveys.</figcaption><p></p>
+</figure>
+</div>
+<p>Associated with the RLS dataset are environmental covariate data for all the sites investigated (<a href="#tbl-site-covars">Table&nbsp;1</a>), plus trait data for all the species observed (<a href="#tbl-species-covars">Table&nbsp;2</a>). By crossing the various datasets we can investigate how coastal biodiversity is distributed globally, how patterns vary at different spatial scales, and how those patterns are affected by environmental, human and life-history covariates. The aim of this practical is to assess an interesting hypothesis related the distribution of life on earth (or a region within), analysing the RLS datasets to see if the information supports predictions associated with that hypothesis or not.</p>
+<div id="fig-diversity" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="diversity.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, and <span class="math inline">\(\gamma\)</span> diversity. Image from bio.libretexts.org.</figcaption><p></p>
+</figure>
+</div>
 <div id="tbl-site-covars" class="anchored">
 <table class="table">
 <caption>Table&nbsp;1: Site-level covariate data available for the analysis. For more information about the covariates see the “site metadata” sheet of the “Environmental covariate data RLS.xlsx” file.</caption>
