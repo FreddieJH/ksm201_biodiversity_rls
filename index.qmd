@@ -33,7 +33,7 @@ Associated with the RLS dataset are environmental covariate data for all the sit
 ![$\alpha$, $\beta$, and $\gamma$ diversity. Image from bio.libretexts.org.](diversity.png){#fig-diversity fig-align="center"}
 
 | **Variable**                           | **Units**                                                                                                                                                                                            |
-|-----------------------------------------------|-------------------------|
+|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | SiteCode                               |                                                                                                                                                                                                      |
 | Site name                              |                                                                                                                                                                                                      |
 | Site latitude                          | decimal degrees                                                                                                                                                                                      |
@@ -108,24 +108,19 @@ The next step is to derive predictions from those hypotheses that can be tested 
 2.  Plots of species richness versus latitude do not differ for fishes, gastropods and crustaceans, nor for total species richness in different oceans.
 3.  Plots of total fish biomass per transect increases with photosynthetically-active radiation, nitrate and phosphate concentrations, but plots differ when binned at different human population density.
 
-::: {.callout-important}
+::: callout-important
 ## Visualise your output
 
 Either on a piece of paper or your digial drawing app of choice (e.g. paint/powerpoint), roughly draw these figures out, what would you expect the figures to look like if the hypothesis was correct or incorrect?
 :::
 
+E.g. Simple example:
 
-E.g. Simple example: 
-- H1: There is greater fish richness closer to the tropics than towards the poles. 
-- Test  of H1: A plot of absolute latitude vs fish richness. As absolute latitude increases (more polar) we expect richness to go down (i.e. a negative slope). If H1 is false then I expect the slope to be either zero or postive. 
-- Draw it out! (See fancy paint drawing: @fig-paint-drawing)
-
+-   H1: There is greater fish richness closer to the tropics than towards the poles.
+-   Test of H1: A plot of absolute latitude vs fish richness. As absolute latitude increases (more polar) we expect richness to go down (i.e. a negative slope). If H1 is false then I expect the slope to be either zero or postive.
+-   Draw it out! (See fancy paint drawing: @fig-paint-drawing)
 
 ![Paint drawing of expected results for the hypothesis H1. Either accept or reject.](paint_drawing.PNG){#fig-paint-drawing fig-align="center"}
-
-
-
-
 
 # Getting the data
 
@@ -143,7 +138,7 @@ You can perform this either in excel or in R (go on!).
 
 -   **Data visualisation:** `Insert > Plot`
 
-::: {.callout-tip}
+::: callout-tip
 ## Copying from pivot table
 
 Once you've created a pivot table, copy and paste your summarised data from it before plotting. Excel will get confused if you try to reference data from a pivot table.
