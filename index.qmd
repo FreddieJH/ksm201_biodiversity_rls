@@ -70,19 +70,19 @@ Associated with the RLS dataset are environmental covariate data for all the sit
 
 | Species variable | Variable                       |
 |------------------|--------------------------------|
-| PHYLUM           | PHYLUM                         |
-| CLASS            | CLASS                          |
-| ORDER            | ORDER                          |
-| FAMILY           | FAMILY                         |
-| Introduced       | Introduced species or not      |
+| PHYLUM           | Taxonomic phylum               |
+| CLASS            | Taxonomic class                |
+| ORDER            | Taxonomic order                |
+| FAMILY           | Taxonomic family               |
+| Introduced       | Introduced species? or not?    |
 | Min depth        | Min depth                      |
 | Max depth        | Max depth                      |
 | IUCN category    | IUCN category                  |
 | Diet             | Diet                           |
 | Trophic group    | Trophic group                  |
 | Time             | Nocturnal/diurnal behaviour    |
-| Water column     | vertical position above seabed |
-| Habitat          | benthic habitat association    |
+| Water column     | Vertical position above seabed |
+| Habitat          | Benthic habitat association    |
 
 : Species-level covariate data available for the analysis. For more information about the covariates see the "species metadata" sheet of the "Environmental covariate data RLS.xlsx" file. {#tbl-species-covars}
 
@@ -108,7 +108,13 @@ The next step is to derive predictions from those hypotheses that can be tested 
 2.  Plots of species richness versus latitude do not differ for fishes, gastropods and crustaceans, nor for total species richness in different oceans.
 3.  Plots of total fish biomass per transect increases with photosynthetically-active radiation, nitrate and phosphate concentrations, but plots differ when binned at different human population density.
 
+::: {.callout-important}
+## Visualise your output
+
 Either on a piece of paper or your digial drawing app of choice (e.g. paint/powerpoint), roughly draw these figures out, what would you expect the figures to look like if the hypothesis was correct or incorrect?
+:::
+
+
 
 # Getting the data
 
@@ -125,6 +131,12 @@ You can perform this either in excel or in R (go on!).
 -   **Data wrangling**: `filter`, `pivot table`, `=vlookup()`, `=if()`
 
 -   **Data visualisation:** `Insert > Plot`
+
+::: {.callout-tip}
+## Copying from pivot table
+
+Once you've created a pivot table, copy and paste your summarised data from it before plotting. Excel will get confused if you try to reference data from a pivot table.
+:::
 
 ## R
 
