@@ -115,6 +115,17 @@ Either on a piece of paper or your digial drawing app of choice (e.g. paint/powe
 :::
 
 
+E.g. Simple example: 
+- H1: There is greater fish richness closer to the tropics than towards the poles. 
+- Test  of H1: A plot of absolute latitude vs fish richness. As absolute latitude increases (more polar) we expect richness to go down (i.e. a negative slope). If H1 is false then I expect the slope to be either zero or postive. 
+- Draw it out! (See fancy paint drawing: @fig-paint-drawing)
+
+
+![Paint drawing of expected results for the hypothesis H1. Either accept or reject.](paint_drawing.png){#fig-paint-drawing fig-align="center"}
+
+
+
+
 
 # Getting the data
 
