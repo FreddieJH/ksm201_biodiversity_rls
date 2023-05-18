@@ -121,7 +121,7 @@ E.g. Simple example:
 - Draw it out! (See fancy paint drawing: @fig-paint-drawing)
 
 
-![Paint drawing of expected results for the hypothesis H1. Either accept or reject.](paint_drawing.png){#fig-paint-drawing fig-align="center"}
+![Paint drawing of expected results for the hypothesis H1. Either accept or reject.](paint_drawing.PNG){#fig-paint-drawing fig-align="center"}
 
 
 
