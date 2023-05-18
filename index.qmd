@@ -1,9 +1,9 @@
 ---
-title: "Building your own hypothesis of global reef biodiversity using Reef Life Survey data"
+title: "Building, and testing, your own hypothesis of global reef biodiversity using Reef Life Survey data"
 subtitle: "KSM201 - Marine resource management and convervation"
 author: "Graham Edgar & Freddie Heather"
 date: "2023-05-19"
-abstract: "Freddie Heather, Adam Yeap, Micah Landon-Lane, Ahmad Catur Widyatmoko, Rachel Breslin, Tyson Bessell, Jemina Stuart-Smith (coordinator)"
+abstract: "Freddie Heather, Adam Yeap, Micah Landon-Lane, Ahmad Catur Widyatmoko, Rachel Breslin, Tyson Bessell, & Jemina Stuart-Smith (coordinator)"
 title-block-banner: "#000080"
 toc: true
 format: html
